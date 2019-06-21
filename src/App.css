@@ -1,0 +1,81 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+section {
+  max-width: 740px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.column {
+  margin: 10px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+
+section:nth-of-type(5) .column:first-of-type {
+  flex-grow: 2;
+  flex-shrink: 2;
+  flex-basis: 22px;
+}
+
+section:nth-of-type(6) .column:nth-of-type(2) {
+  flex-grow: 4;
+  flex-shrink: 4;
+  flex-basis: 66px;
+}
+
+/* OTHER STYLES */
+  
+html, body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  padding: 10px;
+  background: linear-gradient(135deg, #b04, #f80) fixed;
+}
+
+.column {
+  padding: 10px 0;
+  background-color: rgba(255, 0, 0, 0.25);
+  text-align: center;
+  
+  border: 1px solid transparentize(white, 0.25);
+  background-color: transparentize(white, 0.8);
+  color: transparentize(white, 0.1);
+}
