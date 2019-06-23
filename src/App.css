@@ -58,8 +58,9 @@ section:nth-of-type(6) .column:nth-of-type(2) {
 }
 
 /* OTHER STYLES */
-  
-html, body {
+
+html,
+body {
   height: 100%;
   box-sizing: border-box;
 }
@@ -74,8 +75,20 @@ body {
   padding: 10px 0;
   background-color: rgba(255, 0, 0, 0.25);
   text-align: center;
-  
+
   border: 1px solid transparentize(white, 0.25);
   background-color: transparentize(white, 0.8);
   color: transparentize(white, 0.1);
+}
+
+.flex-container > div {
+  margin: 10px;
+  padding: 20px;
+}
+
+.c {
+  background-color: #b04;
+  width: 300px;
+  height: 100px;
+  padding: 50px;
 }

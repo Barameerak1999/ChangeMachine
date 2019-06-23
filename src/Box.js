@@ -1,25 +1,25 @@
 import React from 'react'
-import './App.css';
-const Box = () =>
+import './App.css'
+import App from './App'
+function Box(props) {
+  const usedBandC = {
+    fontStyle: 'italic',
+    color: '#cdcdcd',
+    textDecoration: 'line-through',
+  }
 
-
-<div>    
-<section>
-<div class="column"> $100 dollar bill</div>
-  <div class="column">$50 dollar bill</div>
-  <div class="column"> $20 dollar bill</div>
-  <div class="column"> $10 dollar bill</div>
-  <div class="column"> $5 dollar bill</div>
-</section>
-<section>
-<div class="column"> $1 dollar bill</div>
-  <div class="column">$.25 cents (quarter)</div>
-  <div class="column">$.10 cents (dime)</div>
-  <div class="column"> $.05 cents (nickel)</div>
-  <div class="column">$.01 cents (penny)    </div>
-</section>
-
-</div>
+  // style={props.item.Number != 0 ? usedBandC:null
+  return (
+    <div>
+      <section className="flex-container">
+        <div className="flex-container">
+          <div className="column">{props.item.Name}</div>
+          <div>{props.item.Number}</div>
+        </div>
+      </section>
+    </div>
+  )
+}
 
 // ●        $100 dollar bill
 // ●        $50 dollar bill
@@ -32,10 +32,4 @@ const Box = () =>
 // ●        $.05 cents (nickel)
 // ●        $.01 cents (penny)
 
-
-    
-
-
 export default Box
-
-
