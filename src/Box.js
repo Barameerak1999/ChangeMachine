@@ -5,16 +5,17 @@ function Box(props) {
   const usedBandC = {
     fontStyle: 'italic',
     color: '#cdcdcd',
-    textDecoration: 'line-through',
+    // textDecoration: 'line-through',
   }
-
+  console.log('ssss')
+  console.log(props)
   // style={props.item.Number != 0 ? usedBandC:null
   return (
     <div>
       <section className="flex-container">
-        <div className="flex-container">
-          <div className="column">{props.item.Name}</div>
-          <div>{props.item.Number}</div>
+        <div className="flex-container" style={props.value == 0 ? usedBandC : null}>
+          <div className="column">{props.name}</div>
+          <div>{props.value}</div>
         </div>
       </section>
     </div>

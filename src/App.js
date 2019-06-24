@@ -5,12 +5,14 @@ import CalculateChange from './CalculateChange'
 import NumberField from './NumberField'
 import Box from './Box'
 import BillAndCoin from './BillAndCoin'
+
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
       value: '',
       BillAndCoin: BillAndCoin,
+      Arr: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     }
     this.onChange = this.onChange.bind(this)
   }
@@ -24,11 +26,11 @@ class App extends React.Component {
     // console.log(this.onChange)
     // <CalculateChange  />
   }
+
   calc() {
     let input = this.state.value
     const BillAndCent = [0.01, 0.05, 0.1, 0.25, 1, 5, 10, 20, 50, 100]
-    let Arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
+    const Arr = this.state.Arr
     //   console.log("ss")
     //   console.log(Arr)
     let i
@@ -80,26 +82,10 @@ class App extends React.Component {
         console.log('thisisarr' + Arr)
       }
     }
-    this.state.BillAndCoin[0].Number = Arr[0]
-    this.state.BillAndCoin[1].Number = Arr[1]
-    this.state.BillAndCoin[2].Number = Arr[2]
-    this.state.BillAndCoin[3].Number = Arr[3]
-    this.state.BillAndCoin[4].Number = Arr[4]
-    this.state.BillAndCoin[5].Number = Arr[5]
-    this.state.BillAndCoin[6].Number = Arr[6]
-    this.state.BillAndCoin[7].Number = Arr[7]
-    this.state.BillAndCoin[8].Number = Arr[8]
-    this.state.BillAndCoin[9].Number = Arr[9]
-    console.log('sss' + this.state.BillAndCoin[0].Number)
-    console.log('sss' + this.state.BillAndCoin[1].Number)
-    console.log('sss' + this.state.BillAndCoin[2].Number)
-    console.log('sss' + this.state.BillAndCoin[3].Number)
-    console.log('sss' + this.state.BillAndCoin[4].Number)
-    console.log('sss' + this.state.BillAndCoin[5].Number)
-    console.log('sss' + this.state.BillAndCoin[6].Number)
-    console.log('sss' + this.state.BillAndCoin[7].Number)
-    console.log('sss' + this.state.BillAndCoin[8].Number)
-    console.log('sss' + this.state.BillAndCoin[9].Number)
+
+    this.setState({
+      Arr: Arr,
+    })
   }
 
   //  const   s = {
@@ -108,9 +94,23 @@ class App extends React.Component {
   //  }
 
   render() {
-    const BAC = this.state.BillAndCoin.map(item => <Box key={item.id} item={item} />)
+    // const BAC = this.state.BillAndCoin.map(item => <Box key={item.id} item={item} />)
+    // console.log('rgsss')
+    // console.log(this.state.BillAndCoin.id)
+    console.log('======')
+    console.log(this.state.BillAndCoin)
+
+    const BAC = Object.values(this.state.BillAndCoin).map((item, index) => (
+      <Box name={item.Name} value={this.state.Arr[index]} />
+    ))
+
+    // const BAC = this.state.BillAndCoin.map((item, index) => (
+    //   <Box name={item.Name} value={this.state.Arr[index]} />
+    // ))
     // console.log('grgr' + this.state.BillAndCoin[0].Name)
     // return <div>{BAC}</div>
+    console.log('render')
+    console.log(this.state)
     return (
       <div>
         Input <input value={this.state.value} onChange={this.onChange} />
