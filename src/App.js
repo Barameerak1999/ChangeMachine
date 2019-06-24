@@ -21,7 +21,7 @@ class App extends React.Component {
     const re = /^[+-]?\d+(\.\d+)?$/
 
     this.setState({ value: e.target.value })
-    console.log('fefssse')
+
     console.log(this.state.value)
     // console.log(this.onChange)
     // <CalculateChange  />
@@ -37,6 +37,8 @@ class App extends React.Component {
     console.log('thisisbill' + this.state.BillAndCoin)
     //loop through all the BIlls and coin
     for (i = 0; i < BillAndCent.length; i++) {
+      // if (input <= 0)
+
       if (input < BillAndCent[i]) {
         input = input - BillAndCent[i - 1]
         console.log('billandcent is' + BillAndCent[i - 1])
@@ -115,7 +117,7 @@ class App extends React.Component {
       <div>
         Input <input value={this.state.value} onChange={this.onChange} />
         <button onClick={() => this.calc(this)}>button</button>
-        {BAC}
+        <div className="wrapper">{BAC}</div>
       </div>
     )
   }

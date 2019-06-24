@@ -12,9 +12,9 @@ function Box(props) {
   // style={props.item.Number != 0 ? usedBandC:null
   return (
     <div>
-      <section className="flex-container">
-        <div className="flex-container" style={props.value == 0 ? usedBandC : null}>
-          <div className="column">{props.name}</div>
+      <section>
+        <div style={props.value == 0 ? usedBandC : null}>
+          <div>{props.name}</div>
           <div>{props.value}</div>
         </div>
       </section>
